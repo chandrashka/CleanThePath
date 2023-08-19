@@ -17,7 +17,10 @@ public class BulletLogic : MonoBehaviour
     public void Shoot(Transform doorTransform)
     {
         rigidbody.isKinematic = false;
-        transform.parent.transform.LookAt(doorTransform);
-        rigidbody.AddForce(Vector3.forward*force, ForceMode.Impulse);
+        
+        Transform bulletTransform;
+        
+        (bulletTransform = transform).parent.transform.LookAt(doorTransform);
+        rigidbody.AddForce(bulletTransform.forward * force, ForceMode.Impulse);
     }
 }

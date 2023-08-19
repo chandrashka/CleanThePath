@@ -132,8 +132,8 @@ GameObject:
   - component: {fileID: 302608812160229136}
   - component: {fileID: 8641433322651129783}
   - component: {fileID: 495231054557690833}
-  - component: {fileID: 2528355637535524980}
   - component: {fileID: 1163011839487598450}
+  - component: {fileID: 3652126838054389391}
   m_Layer: 7
   m_Name: InfectionZone
   m_TagString: Untagged
@@ -205,7 +205,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &2528355637535524980
+--- !u!114 &1163011839487598450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5162885754482311633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39f95b6b83df22045916012ea4a29e05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infectionMaterial: {fileID: 2100000, guid: 5e7d0b92dd8f34643ad67cbf2c0e8f3f, type: 2}
+--- !u!135 &3652126838054389391
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -224,21 +237,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1163011839487598450
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5162885754482311633}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39f95b6b83df22045916012ea4a29e05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  infectionMaterial: {fileID: 2100000, guid: 5e7d0b92dd8f34643ad67cbf2c0e8f3f, type: 2}
+  m_Radius: 0.64687145
+  m_Center: {x: 0, y: 0, z: 0.05257623}
 --- !u!1 &7328071483018199811
 GameObject:
   m_ObjectHideFlags: 0

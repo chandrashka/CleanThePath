@@ -3,8 +3,12 @@ using UnityEngine;
 public class InputManager : MonoBehaviour
 {
     [SerializeField] private GameManager gameManager;
+    private bool _isGameOn;
+
     private void Update()
     {
+        if (!_isGameOn) return;
+        
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             gameManager.StartShooting();
@@ -14,5 +18,15 @@ public class InputManager : MonoBehaviour
         {
             gameManager.StopShooting();
         }
+    }
+
+    public void StartGame()
+    {
+        _isGameOn = true;
+    }
+
+    public void EndGame()
+    {
+        _isGameOn = false;
     }
 }

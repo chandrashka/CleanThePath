@@ -160,9 +160,9 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 10
   m_CollisionDetection: 0
 --- !u!1 &7328071483018199811
 GameObject:
@@ -213,3 +213,9 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7328071483018199811, guid: 11fbdd0eca247a1408bbc3d54e673325,
     type: 3}
   shootPosition: {fileID: 1346776599329584059}
+  player: {fileID: 491819047716778120}
+  scaler: 0.4
+  minimumPlayerScale: {x: 0.5, y: 0.5, z: 0.5}
+  enemyLayerMask:
+    serializedVersion: 2
+    m_Bits: 512
