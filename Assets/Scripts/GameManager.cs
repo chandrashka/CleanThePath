@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Transform playerSpawnPosition;
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private float playerStarterSize;
-    
+
     [Space]
     [SerializeField] private Transform doorTransform;
     [SerializeField] private Transform doorEntranceTransform;
@@ -21,6 +21,11 @@ public class GameManager : MonoBehaviour
 
     private GameObject _player;
     private PlayerManager _playerManager;
+
+    private int _score;
+    private int _bulletsLeft;
+
+    private const float LineRendererYCoord = 0.1f;
 
     public void StartGame()
     {
@@ -44,9 +49,11 @@ public class GameManager : MonoBehaviour
     private void DrawPath()
     {
         var playerPosition = _player.transform.position;
-        var playerOnFloorPosition = new Vector3(playerPosition.x, 0.2f, playerPosition.z);
+        var playerOnFloorPosition = new Vector3(playerPosition.x, LineRendererYCoord, playerPosition.z);
+        var doorPosition = doorEntranceTransform.position;
+        var doorEntranceTransformEdit = new Vector3(doorPosition.x, LineRendererYCoord, doorPosition.z);
         
-        var corners = new[] { playerOnFloorPosition, doorEntranceTransform.position };
+        var corners = new[] { playerOnFloorPosition, doorEntranceTransformEdit };
         lineRenderer.SetPositions(corners);
         lineRenderer.startWidth = playerStarterSize;
     }
@@ -87,5 +94,26 @@ public class GameManager : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public int GetScore()
+    {
+        return _score;
+    }
+
+    public int GetBulletsLeft()
+    {
+        _bulletsLeft = _playerManager.GetBulletsLeft();
+        return _bulletsLeft;
+    }
+
+    public void AddScore()
+    {
+        _score++;
+    }
+
+    public void SetBulletsLeft(int localScaleX)
+    {
+        _bulletsLeft = localScaleX;
     }
 }
